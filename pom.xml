@@ -10,7 +10,7 @@
 
     <groupId>com.pet-clinic-app</groupId>
     <artifactId>pet-clinic-app</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>pet-clinic-app</name>
     <description>Practice Dependency Injection</description>
@@ -52,7 +52,7 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/AmadouFromLionSpirit/pet-clinic-app.git</developerConnection>
-      <tag>pet-clinic-app-0.0.3</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
