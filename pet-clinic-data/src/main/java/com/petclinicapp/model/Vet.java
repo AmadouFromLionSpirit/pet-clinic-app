@@ -1,4 +1,4 @@
 package com.petclinicapp.model;
 
-public class Vet extends com.petclinicapp.model.Person {
+public class Vet extends Person {
 }

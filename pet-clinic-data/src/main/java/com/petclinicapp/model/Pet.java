@@ -6,10 +6,10 @@ import lombok.Setter;
 import java.time.LocalDate;
 @Getter
 @Setter
-public class Pet extends com.petclinicapp.model.Person {
+public class Pet extends BaseEntity {
 
-    private com.petclinicapp.model.PetType petType;
-    private com.petclinicapp.model.Owner owner;
+    private PetType petType;
+    private Owner owner;
     private LocalDate birthDate;
 
 }
