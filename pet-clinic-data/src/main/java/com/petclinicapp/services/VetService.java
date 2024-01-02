@@ -1,11 +1,5 @@
 package com.petclinicapp.services;
 
-import com.petclinicapp.model.Vet;
+public interface VetService extends  CrudService{
 
-import java.util.Set;
-
-public interface VetService {
-    Vet findById(Long id);
-    Vet save(Vet vet);
-    Set<Vet> findAll();
 }
