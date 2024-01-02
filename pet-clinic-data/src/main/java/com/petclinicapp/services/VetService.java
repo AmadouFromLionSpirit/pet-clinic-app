@@ -1,5 +1,5 @@
 package com.petclinicapp.services;
 
-public interface VetService extends  CrudService{
+public interface VetService extends CrudService {
 
 }
