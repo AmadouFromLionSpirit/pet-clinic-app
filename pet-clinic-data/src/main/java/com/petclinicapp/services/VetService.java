@@ -1,5 +1,7 @@
 package com.petclinicapp.services;
 
-public interface VetService extends CrudService {
+import com.petclinicapp.model.Vet;
+
+public interface VetService extends CrudService<Vet,Long> {
 
 }

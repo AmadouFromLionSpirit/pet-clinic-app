@@ -2,10 +2,12 @@ package com.petclinicapp.services.map;
 
 import com.petclinicapp.model.Owner;
 import com.petclinicapp.services.CrudService;
+import com.petclinicapp.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -26,5 +28,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
     @Override
     public Owner findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
