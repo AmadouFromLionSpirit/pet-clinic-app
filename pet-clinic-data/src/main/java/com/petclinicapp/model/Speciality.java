@@ -8,6 +8,8 @@ import java.util.Set;
 @Entity
 public class Speciality extends BaseEntity {
     private String description;
+   // @ManyToMany(mappedBy = "specialities")
+   // private Set<Vet> vets = new HashSet<>();
 
 
 
