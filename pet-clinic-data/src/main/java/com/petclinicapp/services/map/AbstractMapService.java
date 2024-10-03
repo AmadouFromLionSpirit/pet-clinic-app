@@ -1,7 +1,6 @@
 package com.petclinicapp.services.map;
 
 import com.petclinicapp.model.BaseEntity;
-import com.sun.xml.bind.v2.model.core.ID;
 
 import java.util.*;
 

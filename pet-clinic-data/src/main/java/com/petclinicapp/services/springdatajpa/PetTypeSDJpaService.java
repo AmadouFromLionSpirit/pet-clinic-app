@@ -39,8 +39,5 @@ public class PetTypeSDJpaService implements PetTypeService {
 
     }
 
-    @Override
-    public PetType findByName(String name) {
-        return petTypeRepository.findByName(name);
-    }
+
 }
