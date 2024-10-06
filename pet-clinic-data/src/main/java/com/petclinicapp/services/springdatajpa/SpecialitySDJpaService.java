@@ -2,6 +2,7 @@ package com.petclinicapp.services.springdatajpa;
 
 import com.petclinicapp.model.Speciality;
 import com.petclinicapp.repositories.SpecialityRepository;
+import com.petclinicapp.services.SpecialityService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

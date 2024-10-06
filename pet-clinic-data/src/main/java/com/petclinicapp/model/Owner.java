@@ -7,13 +7,18 @@ import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 @Entity
 public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
+
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {

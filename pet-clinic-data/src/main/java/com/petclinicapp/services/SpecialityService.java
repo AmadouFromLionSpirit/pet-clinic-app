@@ -1,4 +1,4 @@
-package com.petclinicapp.services.springdatajpa;
+package com.petclinicapp.services;
 
 import com.petclinicapp.model.Speciality;
 import com.petclinicapp.services.CrudService;

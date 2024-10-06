@@ -1,11 +1,7 @@
 package com.petclinicapp.bootstrap;
 
 import com.petclinicapp.model.*;
-import com.petclinicapp.services.OwnerService;
-import com.petclinicapp.services.PetService;
-import com.petclinicapp.services.VetService;
-import com.petclinicapp.services.VisitService;
-import com.petclinicapp.services.springdatajpa.PetTypeService;
+import com.petclinicapp.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +13,9 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final VisitService visitService;
     private final PetService petService;
-    private final PetTypeService petTypeService;
+    private final CrudService.PetTypeService petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, VisitService visitService, PetService petService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, VisitService visitService, PetService petService, CrudService.PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.visitService = visitService;
@@ -31,35 +27,39 @@ public class DataLoader implements CommandLineRunner {
 
         PetType dog = new PetType();
         dog.setName("Dog");
+
         petTypeService.save(dog);
 
         PetType cat = new PetType();
         cat.setName("Cat");
+
         PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
-        owner1.setId(1L);
+       // owner1.setId(1L);
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
-
         ownerService.save(owner1);
 
 
         Owner owner2 = new Owner();
-        owner2.setId(2L);
+      //  owner2.setId(2L);
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
 
         Pet fionasCat = new Pet();
         fionasCat.setName("Just Cat");
+        fionasCat.setPetType(savedCatPetType);
         fionasCat.setOwner(owner2);
         fionasCat.setBirthDate(LocalDate.now());
-        fionasCat.setPetType(savedCatPetType);
+
+
+
         owner2.getPets().add(fionasCat);
-
-
         ownerService.save(owner2);
         System.out.println("Loaded Owners ...");
+
+        petService.save(fionasCat);
 
         Visit catVisit = new Visit();
         catVisit.setPet(fionasCat);
@@ -69,14 +69,14 @@ public class DataLoader implements CommandLineRunner {
         visitService.save(catVisit);
 
         Vet vet1 = new Vet();
-        vet1.setId(1L);
+       // vet1.setId(1L);
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet2.setId(2L);
+       // vet2.setId(2L);
         vet2.setFirstName("Sam");
         vet2.setLastName("Sarr");
 
