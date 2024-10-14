@@ -3,6 +3,7 @@ package com.petclinicapp.services.springdatajpa;
 import com.petclinicapp.model.PetType;
 import com.petclinicapp.repositories.PetTypeRepository;
 import com.petclinicapp.services.CrudService;
+import com.petclinicapp.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 @Service
 @Profile("springdatajpa")
-public class PetTypeSDJpaService implements CrudService.PetTypeService {
+public class PetTypeSDJpaService implements PetTypeService {
     private final PetTypeRepository petTypeRepository;
 
     public PetTypeSDJpaService(PetTypeRepository petTypeRepository) {

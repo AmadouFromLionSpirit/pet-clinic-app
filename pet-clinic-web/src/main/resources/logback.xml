@@ -1,0 +1,12 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] [%-5level] %logger{40} - %message%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.petclinicapp" level="DEBUG"></logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
