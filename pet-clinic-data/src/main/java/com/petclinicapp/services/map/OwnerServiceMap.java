@@ -8,6 +8,8 @@ import com.petclinicapp.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 @Service
 @Profile({"default","map"})
@@ -33,11 +35,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
     }
 
     @Override
-    public Owner save(Owner object) {
+    public Owner save(Owner owner) {
 
-        if(object != null){
-            if (object.getPets() != null) {
-                object.getPets().forEach(pet -> {
+        if(owner != null){
+            if (owner.getPets() != null) {
+                owner.getPets().forEach(pet -> {
                     if (pet.getPetType() != null){
                         if(pet.getPetType().getId() == null){
                             pet.setPetType(petTypeService.save(pet.getPetType()));
@@ -53,7 +55,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
                 });
             }
 
-            return super.save(object);
+            return super.save(owner);
 
         } else {
             return null;
@@ -67,6 +69,9 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return map.values().stream()
+                .filter(owner -> owner.getLastName().equals(lastName))
+                .findFirst() // Récupère le premier élément correspondant
+                .orElse(null); // Retourne null s'il n'y a aucun résultat
     }
 }

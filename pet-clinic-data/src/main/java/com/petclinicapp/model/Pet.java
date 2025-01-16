@@ -3,6 +3,7 @@ package com.petclinicapp.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-
+@SuperBuilder
 public class Pet extends BaseEntity {
     private String name;
 
@@ -26,7 +27,9 @@ public class Pet extends BaseEntity {
     private LocalDate birthDate;
     @OneToMany(mappedBy = "pet",cascade = CascadeType.ALL)
     private Set<Visit> visits = new HashSet<>();
+public Pet () {
 
+}
     public String getName() {
         return name;
     }

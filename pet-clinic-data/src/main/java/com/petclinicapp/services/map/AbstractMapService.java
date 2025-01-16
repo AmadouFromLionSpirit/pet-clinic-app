@@ -1,6 +1,7 @@
 package com.petclinicapp.services.map;
 
 import com.petclinicapp.model.BaseEntity;
+import com.petclinicapp.model.Owner;
 
 import java.util.*;
 
@@ -44,5 +45,6 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 
             return nextId;
         }
+
 }
 
