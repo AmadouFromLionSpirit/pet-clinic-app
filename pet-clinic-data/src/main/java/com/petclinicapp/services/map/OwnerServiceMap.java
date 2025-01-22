@@ -74,4 +74,9 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
                 .findFirst() // Récupère le premier élément correspondant
                 .orElse(null); // Retourne null s'il n'y a aucun résultat
     }
+
+    @Override
+    public void delete(Long id) {
+
+    }
 }
